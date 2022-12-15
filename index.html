@@ -303,11 +303,10 @@
   *,
   *:before,
   *:after {
-    /*-moz-box-sizing: border-box;*/
-    /*-webkit-box-sizing: border-box;*/
-    /*box-sizing: border-box;*/
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
-
   form {
     max-width: 480px;
     margin: 0px;
@@ -315,7 +314,6 @@
     background: #000;
     border-radius: 0px;
   }
-
   input[type='email'] {
     background: rgba(255, 255, 255, 0.1);
     border: none;
@@ -331,7 +329,6 @@
     margin-left: 1px;
     /*box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;*/
   }
-
   button {
     padding: 12px 19px 12px 19px;
     color: #000;
@@ -350,24 +347,20 @@
     /*right: 0%;*/
     /*left: 5%;*/
   }
-
   fieldset {
     margin-bottom: 10px;
     border: none;
   }
-
   .hidden {
     display: none;
   }
-
-  /*@media screen and (min-width: 480px) {*/
-  /*  form {*/
-  /*    max-width: 480px;*/
-  /*    border: none;*/
-  /*  }*/
+  @media screen and (min-width: 350px) {*/
+    form {*/
+      max-width: 480px;*/
+      border: none;*/
+    }
   }
 </style>
-
 <div class='card'>
   <form id='waitlist-form' class='launchlist-form-popup' action='https://getlaunchlist.com/s/XklWVq' method='post' target='_blank'>
     <fieldset>
@@ -377,8 +370,6 @@
   </form>
   <p class='launchlist-form-popup-error hidden'></p>
 </div>
-
-
 <script>
   let form = document.querySelector('.launchlist-form-popup');
   form.addEventListener('submit', function(e) {
