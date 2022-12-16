@@ -348,7 +348,7 @@
     <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script type="text/javascript">
-    let forms = document.querySelectorAll('.launchlist-form');
+    let forms = document.querySelectorAll('.launchlist-form-popup');
     forms.forEach(form => {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -365,7 +365,7 @@
           }
           // submit form
           if (isValid) {
-            let errorEl = document.querySelector('.launchlist-form-error');
+            let errorEl = document.querySelector('.launchlist-form-popup-error');
             // Get the action url of the form
             let action = form.getAttribute('action');
             // Get the form data
