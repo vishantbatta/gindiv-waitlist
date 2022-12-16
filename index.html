@@ -54,6 +54,8 @@
       }
     </style>
     <link rel="stylesheet" href="./style.css" />
+      <script src="https://getlaunchlist.com/js/widget-diy.js" defer></script>
+      <script src='https://getlaunchlist.com/js/popup.js' defer></script>
   </head>
   <body>
     <div>
@@ -61,7 +63,7 @@
         type="text/javascript"
         src="https://unpkg.com/dangerous-html@0.1.11/dist/default/lib.umd.js"
       ></script>
-      <script src='https://getlaunchlist.com/js/popup.js' defer></script>
+
       <link href="./home.css" rel="stylesheet" />
 
       <div class="home-container">
@@ -160,58 +162,7 @@
   </form>
   <p class='launchlist-form-popup-error hidden'></p>
 </div>
-
-
-<script>
-  let form = document.querySelector('.launchlist-form-popup');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    let requiredFields = form.querySelectorAll('[required]');
-    let isValid = true;
-    requiredFields.forEach((field) => {
-        if (field.value === '') {
-          isValid = false;
-          console.log('error')
-          field.classList.add('error');
-        } else {
-          console.log('ok')
-          field.classList.remove('error');
-        }
-        // submit form
-        if (isValid) {
-          let errorEl = document.querySelector('.launchlist-form-popup-error');
-          // Get the action url of the form
-          let action = form.getAttribute('action');
-          // Get the form data
-          let formData = new FormData(form);
-          fetch(action, {
-              method: 'POST',
-              body: formData,
-              headers: {
-                Accept: 'application/json'
-              }
-            })
-            .then(response => response.json())
-            .then((data) => {
-              console.log(data);
-              if (data.ok) {
-                // replace iframe src
-                let iframe = document.querySelector('.launchlist-iframe');
-                iframe.src = data.embeddedLink;
-                toggleModal();
-              } else {
-                errorEl.innerText = data.error;
-                errorEl.classList.remove('hidden');
-              }
-            })
-            .catch((error) => {
-              errorEl.classList.remove('hidden');
-              errorEl.innerText = 'Something went wrong.';
-            });
-        }
-    });
-  });
-</script>"
+"
               ></dangerous-html>
             </div>
           </div>
@@ -370,7 +321,33 @@
   </form>
   <p class='launchlist-form-popup-error hidden'></p>
 </div>
-<script>
+"
+              ></dangerous-html>
+            </div>
+          </div>
+          <div class="home-div2">
+            <dangerous-html
+              html="<style>
+    .div-1 {
+        background-color: #ffffff;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 15px;
+    }
+</style>
+<div class='div-1'><iframe scrolling='yes' src='https://getlaunchlist.com/w/e/XklWVq/leaderboard' style='width: 100%; border: none; height: 320px;'></iframe>
+</div>"
+            ></dangerous-html>
+          </div>
+        </div>
+        <div class="home-container5">
+          <span class="home-text32">© Gindiv, 2022</span>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script type="text/javascript">
   let form = document.querySelector('.launchlist-form-popup');
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -419,31 +396,6 @@
         }
     });
   });
-</script>"
-              ></dangerous-html>
-            </div>
-          </div>
-          <div class="home-div2">
-            <dangerous-html
-              html="<style>
-    .div-1 {
-        background-color: #ffffff;
-        box-sizing: border-box;
-        border-radius: 8px;
-        padding: 15px;
-    }
-</style>
-<div class='div-1'><iframe scrolling='yes' src='https://getlaunchlist.com/w/e/XklWVq/leaderboard' style='width: 100%; border: none; height: 320px;'></iframe>
-</div>"
-            ></dangerous-html>
-          </div>
-        </div>
-        <div class="home-container5">
-          <span class="home-text32">© Gindiv, 2022</span>
-        </div>
-      </div>
-    </div>
-    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</script>  
   </body>
 </html>
